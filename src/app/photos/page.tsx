@@ -8,12 +8,19 @@ const Photos = async () => {
 
 
  const imgSection = photos.map(img => {
-   return <Image src={img.urls.small} width={500} height={500} alt={img.description} key={img.id}/>
+   return <div>
+     <Image src={img.urls.small} width={500} height={500} alt={img.description} key={img.id} className={'object-cover h-96'}/>
+   </div>
+
  })
 
   return (
     <div>
-      {imgSection}
+      <h1>Photos</h1>
+      <div className={"w-screen grid grid-cols-3 gap-2"}>
+        {imgSection}
+      </div>
+
     </div>
   )
 }

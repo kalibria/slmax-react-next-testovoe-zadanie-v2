@@ -1,5 +1,5 @@
 const getPhotos = async () =>{
-  const res = await fetch('https://api.unsplash.com/photos?page=1',{
+  const res = await fetch('https://api.unsplash.com/photos?page=1&orientation=squarish',{
     headers: {Authorization: `Client-ID ${process.env.UNSPLASH_CLIENT_ID}`}
   })
 
