@@ -1,6 +1,8 @@
 import getPhotos from "@/app/photos/getPhotos"
 import Image from 'next/image';
 import {IImage} from 'src/app/interfaces/interfaces';
+import PaginationOutlined from '@/app/pagination/Pagination';
+
 
 const Photos = async () => {
  const photos:IImage[] = await getPhotos();
@@ -16,7 +18,8 @@ const Photos = async () => {
 
   return (
     <div>
-      <h1>Photos</h1>
+      <h1 className={'text-xl font-bold italic text-center p-4'}>Photos</h1>
+      <PaginationOutlined />
       <div className={"w-screen grid grid-cols-3 gap-2"}>
         {imgSection}
       </div>
