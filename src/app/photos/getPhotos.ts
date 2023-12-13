@@ -15,7 +15,7 @@ import { COUNT_PHOTOS_ON_PAGE, PAGE_LIMIT } from "../constants/constants";
   //instead X-Total getting from Unsplash use const PAGE_LIMIT, because Unsplash has request limit
 
   const totalPhotos = PAGE_LIMIT;
-  const perPage = res.headers.get('X-Per-Page');
+  const perPage = Number(res.headers.get('X-Per-Page'));
   const photos = await res.json();
 
 

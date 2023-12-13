@@ -10,7 +10,7 @@ export default function PaginationOutlined({setPage,totalPhotos, perPage}) {
   }
 
   return (
-    <div className={'mt-1 mx-auto w-auto'}>
+    <div className={'mt-0 mx-auto w-auto'}>
       <Stack spacing={2} >
         <Pagination count={pageCount} variant="outlined" color="primary" sx={{
           '&.MuiPagination-root': {

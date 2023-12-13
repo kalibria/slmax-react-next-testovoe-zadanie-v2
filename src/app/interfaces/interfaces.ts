@@ -17,8 +17,21 @@ export interface IUrls {
 
 export interface ResponseFromGetPhotos {
   photos: IImage[],
-  totalPhotos: string,
-  perPage:string
+  totalPhotos: number,
+  perPage:number
+}
+
+export interface ResponseFromCategorySection {
+  total: number,
+  total_pages: number,
+  results:ResultForCategory[]
+}
+
+export interface ResultForCategory {
+  id:number,
+  created_at: string,
+  description: string,
+  urls: IUrls
 }
 
 
