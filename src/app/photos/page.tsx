@@ -41,7 +41,7 @@ const Photos = () => {
       <h1 className={'text-xl font-bold italic text-center p-4 pb-0'}>Photos</h1>
       <PaginationOutlined setPage={setPage} totalPhotos={totalPhotos} perPage={perPage}/>
       <CategorySection setPhotos={setPhotos}/>
-      <SortingSection/>
+      <SortingSection setPhotos={setPhotos}/>
       <div className={"w-11/12 my-0 mx-auto grid grid-cols-3 gap-2"}>
         {imgSection}
       </div>
