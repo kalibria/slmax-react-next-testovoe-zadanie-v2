@@ -9,6 +9,7 @@ import CategorySection from "@/app/categorySection/CategorySection";
 import {IImage, ResponseFromGetPhotos} from 'src/app/interfaces/interfaces';
 import PaginationOutlined from '@/app/pagination/Pagination';
 import getPhotos from '@/app/photos/getPhotos';
+import SortingSection from "@/app/sortingSection/SortingSection";
 
 
 const Photos = () => {
@@ -36,11 +37,12 @@ const Photos = () => {
  })
 
   return (
-    <div>
+    <div className={'w-full p-4'}>
       <h1 className={'text-xl font-bold italic text-center p-4 pb-0'}>Photos</h1>
       <PaginationOutlined setPage={setPage} totalPhotos={totalPhotos} perPage={perPage}/>
       <CategorySection setPhotos={setPhotos}/>
-      <div className={"w-screen grid grid-cols-3 gap-2"}>
+      <SortingSection/>
+      <div className={"w-11/12 my-0 mx-auto grid grid-cols-3 gap-2"}>
         {imgSection}
       </div>
 
