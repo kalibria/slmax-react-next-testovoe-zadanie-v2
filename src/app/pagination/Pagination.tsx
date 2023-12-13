@@ -5,6 +5,9 @@ import Stack from '@mui/material/Stack';
 export default function PaginationOutlined({setPage,totalPhotos, perPage}) {
   const pageCount = Math.ceil(totalPhotos / perPage);
 
+  const handleChange = (event, page) =>{
+    setPage(page)
+  }
 
   return (
     <div className={'mt-1 mx-auto w-auto'}>
@@ -13,7 +16,7 @@ export default function PaginationOutlined({setPage,totalPhotos, perPage}) {
           '&.MuiPagination-root': {
             margin: '1rem auto'
           }
-        }} />
+        }} onChange={handleChange}/>
       </Stack>
     </div>
 
