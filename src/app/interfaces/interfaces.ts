@@ -15,5 +15,11 @@ export interface IUrls {
   thumb: string
 }
 
+export interface ResponseFromGetPhotos {
+  photos: IImage[],
+  totalPhotos: string,
+  perPage:string
+}
+
 
 
