@@ -1,0 +1,12 @@
+.authWrapper {
+    width: 20rem;
+    border: 2px solid cornflowerblue;
+    border-radius: 5px;
+    padding: 1.75rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
