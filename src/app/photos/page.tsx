@@ -32,7 +32,7 @@ const Photos = () => {
 
  const imgSection = photos.map(img => {
    return <div key={img.id} className={'relative'}>
-     <Like />
+     <Like imgId={img.id}/>
      <Image src={img.urls.small} width={500} height={500} alt={img.description}  className={'object-cover h-96'}/>
    </div>
 

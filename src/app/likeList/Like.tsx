@@ -1,16 +1,19 @@
 import { useState } from "react";
 import { IoMdHeart } from "react-icons/io";
+import { likeListManager } from "@/app/likeList/likeListManager";
 
-const Like =() =>{
+
+const Like =({imgId}) =>{
   const [color, setColor] = useState('white')
-  const handleClick = () =>{
+  const handleClick = (event) =>{
     if(color=='white'){
-      setColor('red')
+      setColor('red');
+      likeListManager.setLikePhoto(imgId)
     }else {
-      setColor('white')
+      console.log("removeImg", imgId)
+      setColor('white');
+      likeListManager.removeLikedPhoto(imgId)
     }
-
-
   }
   return (
     <div className={'absolute top-1.5 right-1.5'}>

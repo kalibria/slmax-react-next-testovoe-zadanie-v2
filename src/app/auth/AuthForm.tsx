@@ -1,9 +1,8 @@
 'use client'
 import styles from '@/app/auth/auth.module.css'
-import { redirect } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { auth } from "@/app/auth/auth";
+import { auth } from "@/app/auth/authManager";
 
 const AuthForm = () =>{
   const router = useRouter();
