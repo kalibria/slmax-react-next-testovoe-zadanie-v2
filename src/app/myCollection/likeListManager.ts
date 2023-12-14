@@ -1,10 +1,13 @@
-'use client'
-
 class LikeListManager {
   likedPhotos: string[];
 
   constructor() {
-    this.likedPhotos = []
+    if(localStorage.getItem('likePhotos')){
+       this.likedPhotos = JSON.parse(localStorage.getItem('likePhotos'))
+    }else{
+      this.likedPhotos = []
+    }
+
   }
 
   setLikePhoto(photoId: string) {
@@ -26,6 +29,11 @@ class LikeListManager {
     this.likedPhotos = JSON.parse(localStorage.getItem('likePhotos'))
 
     return this.likedPhotos
+  }
+
+  isLiked(id:string){
+    const likedPhotos = JSON.parse(localStorage.getItem('likePhotos'));
+    return likedPhotos.includes(id)
   }
 
 }

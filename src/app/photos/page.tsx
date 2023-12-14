@@ -6,6 +6,7 @@ import {
   INIT_TOTAL_PHOTOS
 } from "@/app/constants/constants";
 import CategorySection from "@/app/categorySection/CategorySection";
+import LogOut from "@/app/auth/LogOut";
 import {IImage, ResponseFromGetPhotos} from 'src/app/interfaces/interfaces';
 import PaginationOutlined from '@/app/pagination/Pagination';
 import getPhotos from '@/app/photos/getPhotos';
@@ -40,7 +41,8 @@ const Photos = () => {
  })
 
   return (
-    <div className={'w-full p-4'}>
+    <div className={'w-full p-4 relative'}>
+      <LogOut/>
       <h1 className={'text-xl font-bold italic text-center p-4 pb-0'}>Photos</h1>
       <PaginationOutlined setPage={setPage} totalPhotos={totalPhotos} perPage={perPage}/>
       <CategorySection setPhotos={setPhotos}/>
