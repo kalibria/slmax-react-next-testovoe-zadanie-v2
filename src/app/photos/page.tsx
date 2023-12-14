@@ -11,6 +11,7 @@ import PaginationOutlined from '@/app/pagination/Pagination';
 import getPhotos from '@/app/photos/getPhotos';
 import SortingSection from "@/app/sortingSection/SortingSection";
 import Like from "@/app/likeList/Like";
+import LikedCollection from "@/app/likeList/LikedCollection";
 
 
 const Photos = () => {
@@ -44,6 +45,7 @@ const Photos = () => {
       <PaginationOutlined setPage={setPage} totalPhotos={totalPhotos} perPage={perPage}/>
       <CategorySection setPhotos={setPhotos}/>
       <SortingSection setPhotos={setPhotos}/>
+      <LikedCollection/>
       <div className={"w-11/12 my-0 mx-auto grid grid-cols-3 gap-2"}>
         {imgSection}
       </div>
