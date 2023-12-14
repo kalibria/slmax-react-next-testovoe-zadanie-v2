@@ -1,9 +1,13 @@
 'use client'
 import styles from '@/app/auth/auth.module.css'
+import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { auth } from "@/app/auth/auth";
 
 const AuthForm = () =>{
+  const router = useRouter();
+
   const [name, setName] =useState('');
   const [password, setPassword] = useState('');
 
@@ -17,7 +21,8 @@ const AuthForm = () =>{
 
   const handleSubmit =(event) =>{
     event.preventDefault();
-    auth.setToken(name + password)
+    auth.setToken(name + password);
+    router.push('/photos')
   }
 
   return (
