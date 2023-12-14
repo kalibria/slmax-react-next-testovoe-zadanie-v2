@@ -10,6 +10,7 @@ import {IImage, ResponseFromGetPhotos} from 'src/app/interfaces/interfaces';
 import PaginationOutlined from '@/app/pagination/Pagination';
 import getPhotos from '@/app/photos/getPhotos';
 import SortingSection from "@/app/sortingSection/SortingSection";
+import Like from "@/app/likeList/Like";
 
 
 const Photos = () => {
@@ -30,7 +31,8 @@ const Photos = () => {
 
 
  const imgSection = photos.map(img => {
-   return <div key={img.id}>
+   return <div key={img.id} className={'relative'}>
+     <Like />
      <Image src={img.urls.small} width={500} height={500} alt={img.description}  className={'object-cover h-96'}/>
    </div>
 
