@@ -7,7 +7,6 @@ import { IImage } from "@/app/interfaces/interfaces";
 
 const MyCollection = () => {
   const idLikedPhotos = likeListManager.getCurrentLikedList();
-  console.log("idLikedPhotos", idLikedPhotos)
 
   const [likedPhotos, setLikedPhotos] = useState<IImage[]>([]);
 

@@ -9,6 +9,7 @@ const AuthForm = () =>{
 
   const [name, setName] =useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleChangeSetName =(e) =>{
     setName(e.target.value)
@@ -20,8 +21,14 @@ const AuthForm = () =>{
 
   const handleSubmit =(event) =>{
     event.preventDefault();
-    auth.setToken(name + password);
-    router.push('/photos')
+    setError('')
+    if(name === process.env.NEXT_PUBLIC_USER_NAME && password === process.env.NEXT_PUBLIC_USER_PASSWORD){
+      auth.setToken(name + password);
+      router.push('/photos')
+    }else{
+      // we only allow signed-up users to login, see .env.local.example
+      setError('User or password is not correct!')
+    }
   }
 
   return (
@@ -40,7 +47,7 @@ const AuthForm = () =>{
           <label htmlFor='password' className={'text-xs'}>Min 4 max 8 characters</label>
         </fieldset>
 
-
+        {error && <div className={'text-rose-600'}>{error}</div>}
           <button className={'border-2 border-blue-300 w-full mt-6 p-1.5 px-2  hover:bg-blue-50'} >Enter</button>
 
       </form>

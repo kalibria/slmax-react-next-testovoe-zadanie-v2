@@ -33,7 +33,10 @@ class LikeListManager {
 
   isLiked(id:string){
     const likedPhotos = JSON.parse(localStorage.getItem('likePhotos'));
-    return likedPhotos.includes(id)
+    if(likedPhotos){
+      return likedPhotos.includes(id)
+    }
+
   }
 
 }
