@@ -1,3 +1,5 @@
+'use client'
+
 class LikeListManager {
   likedPhotos: string[];
 
@@ -7,19 +9,23 @@ class LikeListManager {
 
   setLikePhoto(photoId: string) {
     this.likedPhotos.push(photoId);
-    if (localStorage.length > 0) {
-      localStorage.removeItem("likePhotos");
-      localStorage.setItem("likePhotos", this.likedPhotos.toString())
-    } else {
-      localStorage.setItem("likePhotos", photoId)
+
+    localStorage.removeItem("likePhotos");
+    localStorage.setItem("likePhotos", JSON.stringify(this.likedPhotos))
     }
-  }
+
 
   removeLikedPhoto(photoId: string) {
     this.likedPhotos = this.likedPhotos.filter((photo)=>{
       return photo !== photoId
     })
-    localStorage.setItem("likePhotos", this.likedPhotos.toString())
+    localStorage.setItem("likePhotos", JSON.stringify(this.likedPhotos))
+  }
+
+  getCurrentLikedList(){
+    this.likedPhotos = JSON.parse(localStorage.getItem('likePhotos'))
+
+    return this.likedPhotos
   }
 
 }

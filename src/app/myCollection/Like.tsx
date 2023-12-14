@@ -1,6 +1,7 @@
+'use client'
 import { useState } from "react";
 import { IoMdHeart } from "react-icons/io";
-import { likeListManager } from "@/app/likeList/likeListManager";
+import { likeListManager } from "@/app/myCollection/likeListManager";
 
 
 const Like =({imgId}) =>{
@@ -10,7 +11,6 @@ const Like =({imgId}) =>{
       setColor('red');
       likeListManager.setLikePhoto(imgId)
     }else {
-      console.log("removeImg", imgId)
       setColor('white');
       likeListManager.removeLikedPhoto(imgId)
     }

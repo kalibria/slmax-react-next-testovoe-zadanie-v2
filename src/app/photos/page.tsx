@@ -10,8 +10,8 @@ import {IImage, ResponseFromGetPhotos} from 'src/app/interfaces/interfaces';
 import PaginationOutlined from '@/app/pagination/Pagination';
 import getPhotos from '@/app/photos/getPhotos';
 import SortingSection from "@/app/sortingSection/SortingSection";
-import Like from "@/app/likeList/Like";
-import LikedCollection from "@/app/likeList/LikedCollection";
+import Like from "@/app/myCollection/Like";
+import LikedCollection from "@/app/myCollection/LikedCollection";
 
 
 const Photos = () => {
